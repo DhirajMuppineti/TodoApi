@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -86,6 +86,11 @@ DATABASES = {
         "PASSWORD": "AVNS_T5bXHY6fqqxv-uhtEFS",
         "HOST": "mysql-3bfd54f9-spit-b45c.a.aivencloud.com",
         "PORT": "16165",
+        "OPTIONS":{
+            "ssl":{
+                "ca": os.path.join(BASE_DIR, "DC/ca.pem"),
+            },
+        },
     }
 }
 
